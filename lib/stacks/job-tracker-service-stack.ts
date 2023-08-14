@@ -10,7 +10,7 @@ export class JobTrackerServiceStack extends cdk.Stack {
         new Function(this, 'LambdaFunction', {
             runtime: Runtime.PYTHON_3_9,
             handler: 'lambda_handler.handler',
-            code: Code.fromAsset(path.join(__dirname, 'service/src/lambda-handler'))
+            code: Code.fromAsset(path.join(__dirname, '../../service/src/'))
         });
     }
 }
