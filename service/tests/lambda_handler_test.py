@@ -1,6 +1,6 @@
 import unittest
 
-from service.src.lambda_handler import handler
+from service.src.index import handler
 
 
 class LambdaHandlerTest(unittest.TestCase):
