@@ -1,9 +1,9 @@
 import unittest
 
-from service.src.index import handler
+from service.src.jobs.post import handler
 
 
-class LambdaHandlerTest(unittest.TestCase):
+class PostJobTest(unittest.TestCase):
     def test_handler_returns_hello_world(self):
         actual = handler(None, None)
         expected = "hello world"
