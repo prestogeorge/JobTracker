@@ -3,7 +3,7 @@
 // import * as JobTracker from '../lib/job_tracker-stack';
 
 // example test. To run these tests, uncomment this file along with the
-// example resource in lib/job-tracker-pipeline-stack.ts
+// example resource in lib/jobs-tracker-pipeline-stack.ts
 test('SQS Queue Created', () => {
 //   const app = new cdk.App();
 //     // WHEN
