@@ -24,7 +24,7 @@ export class JobTrackerServiceStack extends cdk.Stack {
                       image: Runtime.PYTHON_3_9.bundlingImage,
                       command: [
                         'bash', '-c',
-                        'pip install -r "../../service/requirements.txt" -t /asset-output && cp -au . /asset-output'
+                        'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output'
                       ],
                 }}),
             role: lambdaRole
