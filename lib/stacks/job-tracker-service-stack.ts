@@ -18,7 +18,15 @@ export class JobTrackerServiceStack extends cdk.Stack {
         const postJobLambda = new Function(this, 'PostJobLambda', {
             runtime: Runtime.PYTHON_3_9,
             handler: 'post.handler',
-            code: Code.fromAsset(path.join(__dirname, '../../service/src/api/jobs')),
+            code: Code.fromAsset(path.join(__dirname, '../../service/src/api/jobs'),
+                {
+                    bundling: {
+                      image: Runtime.PYTHON_3_9.bundlingImage,
+                      command: [
+                        'bash', '-c',
+                        'pip install -r "../../service/requirements.txt" -t /asset-output && cp -au . /asset-output'
+                      ],
+                }}),
             role: lambdaRole
         });
 
