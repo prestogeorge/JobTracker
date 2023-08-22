@@ -14,7 +14,12 @@ export class JobTrackerPipelineStack extends cdk.Stack {
           connectionArn: 'arn:aws:codestar-connections:us-west-1:357200941310:connection/e8ed2ad3-5d54-4d8e-9209-a41c40537924'
         }),
         commands: ['npm ci', 'npm run build', 'npx cdk synth']
-      })
+      }),
+      codeBuildDefaults: {
+        buildEnvironment: {
+          privileged: true
+        }
+      }
     });
     pipeline.addStage(new JobTrackerServiceStage(this, 'JobTrackerServiceStage'));
   }
